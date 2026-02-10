@@ -1,0 +1,15 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.alerta{
+    color: white;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.error{
+    background-color: v.$rojo;
+}
+.accept{
+    background-color: v.$verde;
+}

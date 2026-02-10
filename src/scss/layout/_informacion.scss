@@ -1,0 +1,40 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.info--transferencia{
+    text-align: center;
+    font-size: 1.5rem;
+    ul{
+        list-style: none;
+        
+    }
+   
+}
+.info--contacto{
+     h2{
+        text-align: center;
+        
+    }
+}
+.info--redes{
+    a{
+        font-size: 1.5rem;
+        color: black;
+    }
+    img{
+        height: 5rem;
+        width: auto;
+    }
+    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 4rem;
+    
+    @include m.telefono{
+        padding-left: 5rem;
+    }
+    @include m.desktop{
+        padding-left: 35rem; 
+    }
+    
+}

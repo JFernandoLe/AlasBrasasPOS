@@ -1,0 +1,196 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.tabla--carrito{
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+
+    thead{
+        display: none;
+        @include m.tablet{
+            display: table-header-group;
+        }
+    }
+
+    th {
+        border: none;
+        background-color: white;
+        color: rgb(117, 117, 117);
+        font-weight:200;
+    }
+    td{
+        color: black;
+    }
+    tr {
+        background-color: white;
+        color: black;
+        
+    }
+    tbody{
+        border: none;
+        color: red;
+    }
+    img{
+        margin: 0 auto;
+        height: 100%;
+        width: 10rem;
+    }
+    input{
+        display: inline-block;
+    }
+    .boton--rojo{
+
+        width: 4rem;
+        height: 4rem;
+        font-size: 2rem;
+        margin: 0 auto;
+        margin-top: 1rem;
+        padding: 0;
+        text-transform: lowercase;
+        border: none;
+    }
+    .boton--rojo:hover{
+        transform: scale(1);
+    }
+
+
+}
+
+.tabla--carrito{
+    display: block;
+    width: 100%;
+    @include m.tablet{
+        display: table;
+    }
+    tbody, 
+    tr, 
+    td {
+        display: block;
+        width: 100%;
+    }
+    tbody{
+        @include m.tablet{
+            width: auto;
+            display: table-row-group;
+        }
+    }
+    tr{
+        @include m.tablet{
+            width: auto;
+            display: table-row;
+        }
+    }
+    td{
+        @include m.tablet{
+            width: auto;
+            display: table-cell;
+        }
+    }
+
+}
+
+.tabla--carrito{
+    tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+    }
+    td {
+        text-align: center;
+        padding-left: 50%;
+        position: relative;
+        @include m.tablet{
+            padding-left: 0;
+        }
+    }
+    tfoot{
+        
+        td{
+            width: 20rem;
+            padding-left: 0;
+            
+            @include m.tablet{
+                width: auto;
+            }
+        }
+    }
+}
+
+.tabla--carrito td::before {
+    content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+        text-align: left;
+    @include m.tablet{
+            content: none;
+            position: static;
+            font-weight: normal;
+            text-align: inherit;
+    }
+        
+}
+
+.boton--accion--carrito{
+    display: flex;
+    gap:1rem;
+    align-items: center;
+    justify-content: center;
+    button{
+        cursor: pointer;
+        border-style: hidden;
+        border-radius: 1rem;
+        color: white;
+        font-weight: bolder;
+        font-size: 2rem;
+        height: 4rem;
+        width: 4rem;
+    }
+    .btn-sub{
+        background-color: rgb(219, 201, 141);
+    }
+    .btn-sub:hover{
+        background-color: rgb(139, 128, 92);
+    }
+    .btn-add{
+        background-color: rgb(200, 216, 183);
+    }
+    .btn-add:hover{
+        background-color: rgb(105, 113, 97);;
+    }
+
+}
+.botones--carrito{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    font-size: 1.5rem;
+    align-items: center;
+    justify-items: center;
+    
+    .boton--naranja{
+        line-height: 2rem;
+        width: auto;
+        padding: 1rem;
+        border-width: 0;
+        margin: 0;
+        
+    }
+    .pagar{
+        background-color: v.$verde;
+    }
+}
+.gracias{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    .boton--naranja{
+        border: none;
+        width: 50%;
+        @include m.tablet{
+            width: 30%;
+        }
+    }
+}

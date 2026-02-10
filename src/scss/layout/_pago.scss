@@ -1,0 +1,119 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+
+.pago-card {
+    margin: 5rem auto;
+    
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    width: 350px;
+    box-shadow: 0 0 15px rgba(0,0,0,.5);
+    
+    h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    }
+
+    .total {
+        font-size: 22px;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #33a26d;
+    }
+
+    label {
+        display: block;
+        margin-top: 15px;
+    }
+
+    select,
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: none;
+        font-size: 16px;
+    }
+
+    .cambio {
+        margin-top: 15px;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .info-transferencia {
+        margin-top: 15px;
+        text-align: center;
+        color: #ccc;
+    }
+
+    .btn-pagar {
+        margin-top: 20px;
+        width: 100%;
+        padding: 12px;
+        background: #ff9800;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .btn-pagar:hover {
+        background: #ffc107;
+        
+    }
+    .btnOculto{
+        cursor: no-drop;
+        background-color: #6e6959;
+    }
+    .btnOculto:hover{
+        background-color: #6e6959;
+    }
+    .oculto {
+        display: none;
+    }
+}
+
+#ticket {
+    display: none;
+    p{
+        line-height: 1.2;
+    }
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #ticket,
+    #ticket * {
+        visibility: visible;
+    }
+
+    #ticket {
+        display: block;   
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 58mm;
+        height: auto;
+        font-family: monospace;
+        font-size: 12px;
+    }
+
+    button {
+        display: none;
+    }
+}
+
+
+
+
+

@@ -1,0 +1,52 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.fondo{
+    display: grid;
+    grid-template-rows: 20% 70% 10%;
+    height: 100%;
+    width: 100%;
+    .fondo__logo{
+        justify-content: center;
+        margin-top: 4rem;
+        @include m.telefono{
+            max-width: 85%;
+            
+        }
+        @include m.tablet{
+            max-width: 30%;
+        }
+    }
+    
+}
+
+.fondo__login{
+    display: flex;
+    justify-content:end;
+    align-items: end;
+    height: 100%;
+    @include m.telefono{
+        max-width: 80%;
+    }
+    @include m.tablet{
+        max-width: 25%;
+    }
+}
+.fondo__texto{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    p{
+        color: v.$blanco;
+    }
+    span{
+        color: v.$rojo;
+        text-decoration: underline;
+        transition: font-size .3s ease;
+        &:hover{
+            font-size: 2.1rem;
+            cursor: pointer;
+        }
+    } 
+}

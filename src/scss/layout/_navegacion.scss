@@ -1,0 +1,56 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.nav__pedidos{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s ease-in-out, opacity 0.5s linear;
+    @include m.tablet{
+        display: flex;
+        padding-top: 2rem;
+        flex-direction: row;
+        visibility: visible;
+        opacity: 1;
+    }
+    a{
+        text-transform: capitalize;
+        color: v.$grisFuerte;
+        &:hover{
+        cursor: pointer;
+        color: rgb(208, 115, 115);
+        }  
+    }
+    .activo{
+        color: rgb(208, 115, 115);
+        
+    }
+}
+.titulo--categoria{
+    text-transform: capitalize;
+}
+.mobile-menu{
+    //Para centrar el icono del menu
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg{
+        height: 5rem;
+    }
+    @include m.tablet{
+        display: none;
+    }
+}
+
+.mostrar{
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu__pedidos{
+    height: 100%;
+}

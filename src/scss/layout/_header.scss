@@ -1,0 +1,36 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.header__menu{
+    display: grid;
+    
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    img{
+        height: 100%;
+    }
+    a{
+        display:inline-block;
+    }
+    .header__menu--logo{
+        
+        justify-self: center;
+        align-self: center;
+        grid-column: 1/4;
+        
+    }
+    .header__menu--data{
+        margin-left: 3rem;
+        grid-column: 1/3;
+        @include m.tablet{
+            grid-column: 1/2;
+        }
+    }
+    .header__menu--carrito{
+        margin-right: 3rem;
+        margin-bottom: 0rem;
+        justify-self: end;
+        align-self: center;
+        grid-column: 3/4;
+    }
+}

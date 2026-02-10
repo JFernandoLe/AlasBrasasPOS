@@ -1,0 +1,22 @@
+{
+  "name": "AlasBrasasPOS",
+  "short_name": "AlasBrasas",
+  "description": "Sistema de Punto de Venta para AlasBrasas",
+  "start_url": "./index.php",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#FF4500",
+  "icons": [
+    {
+      "src": "src/img/full/ALASBRASAS.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "src/img/full/ALASBRASAS.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

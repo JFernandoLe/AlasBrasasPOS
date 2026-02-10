@@ -1,0 +1,46 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.check {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Ocultar checkbox real */
+.check input {
+  display: none;
+}
+
+/* Caja */
+.checkmark {
+  width: 18px;
+  height: 18px;
+  border: 2px solid v.$grisClaro;
+  background-color: v.$grisClaro;
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+}
+
+/* Check */
+.check input:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Fondo cuando está activo */
+.check input:checked + .checkmark {
+  background: v.$rojo;
+  border: 2px solid v.$rojo;
+}

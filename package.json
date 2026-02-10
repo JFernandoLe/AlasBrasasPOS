@@ -1,0 +1,32 @@
+{
+  "name": "alasbrasaspos",
+  "version": "1.0.0",
+  "description": "Proyecto PWD para punto de venta",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch src/scss:build/css",
+    "css":"gulp css",
+    "dev": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JFernandoLe/AlasBrasasPOS.git"
+  },
+  "keywords": [
+    "SASS",
+    "GULP"
+  ],
+  "author": "Juan Fernando Leon Medellin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JFernandoLe/AlasBrasasPOS/issues"
+  },
+  "homepage": "https://github.com/JFernandoLe/AlasBrasasPOS#readme",
+  "devDependencies": {
+    "gulp": "^5.0.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^6.0.1",
+    "sass": "^1.90.0"
+  }
+}

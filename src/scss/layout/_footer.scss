@@ -1,0 +1,45 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.footer__menu {
+    display: flex;
+    height: calc(5rem + env(safe-area-inset-bottom)); 
+    background-color: v.$blanco; 
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start; 
+    padding: 0.5rem 2rem env(safe-area-inset-bottom) 2rem; 
+
+    @include m.telefono {
+        gap: 2rem; 
+    }
+    
+    @include m.tablet {
+        gap: 20rem;
+    }
+    
+    svg {
+        height: 3.5rem; 
+        transition: transform .3s ease, fill .3s ease;
+        
+        &:hover {
+            transform: scale(1.1); 
+            cursor: pointer;
+        }
+    }
+}
+
+.icono--footer {
+    fill: v.$gris;
+    &:hover {
+        fill: v.$grisFuerte;
+    }
+}
+
+.icono--actual {
+    fill: v.$rojoClaro;
+    &:hover {
+        fill: v.$rojoFuerte;
+    }
+}

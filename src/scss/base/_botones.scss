@@ -1,0 +1,101 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.boton--mediano{
+    max-width: 50%;
+    border-style: none;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+    
+}
+
+.boton--rojo{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    @include m.boton(v.$rojo);
+    @include m.tablet{
+        @include m.boton(v.$rojo, true);
+    }
+    
+
+}
+.boton--rojo:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+.boton--naranja{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    @include m.boton(v.$naranja);
+    @include m.tablet{
+        @include m.boton(v.$naranja, true);
+    }
+    
+
+}
+.boton--naranja:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+.boton--verde{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    @include m.boton(v.$verde);
+    @include m.tablet{
+        @include m.boton(v.$verde, true);
+    }
+    
+
+}
+.boton--verde:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+
+.boton--gris{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    @include m.boton(v.$grisFuerte);
+    @include m.tablet{
+        @include m.boton(v.$grisFuerte, true);
+    }
+    
+
+}
+.boton--gris:hover{
+    transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+.boton2{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 15rem;
+    width: 15rem;
+    background-color: v.$blanco;
+    border-radius: 2.5rem;
+    font-size: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+    img{
+        height: 8rem;
+        width: 8rem;
+        margin-bottom: 0rem;
+    }
+    a{
+        margin-top: 0.5rem;
+        height: 4rem;
+    }
+    
+    
+}
