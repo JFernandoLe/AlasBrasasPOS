@@ -70,10 +70,7 @@
                                         value="<?= $i['stock_actual'] ?>" 
                                         required
                                     >
-                                    <button 
-                                        type="submit"
-                                        onclick="return confirm('¿Actualizar stock de <?= $i['nombre'] ?>?')"
-                                    >
+                                    <button type="submit">
                                         Confirmar
                                     </button>
                                 </form>
