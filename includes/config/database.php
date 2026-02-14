@@ -2,7 +2,7 @@
 function conectarDB() {
     $db = new mysqli(
         'localhost',
-        'alas_user',
+        'root',
         'escom',
         'alasbrasaspos'
     );

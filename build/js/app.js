@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
         cargarProductos();
         filtroCategoria();
     }
-
+    if (document.getElementById('input-variantes')) {
+        formularioVariantes();
+    }
     if (document.getElementById('btn-agregar')) {
         formularioVariantes();
         formularioPreparar();
@@ -44,6 +46,7 @@ function navegacionResponsive() {
 function formularioVariantes(){
     document.querySelectorAll(".chk-opcion").forEach(chk => {
         chk.addEventListener("change", () => {
+            
             const input = document.getElementById(chk.dataset.target);
 
             if (!input) return;
@@ -110,7 +113,7 @@ function formularioPreparar() {
     document.querySelectorAll(".checkbox").forEach(chk => {
         chk.addEventListener("change", () => {
             const idVariante = chk.dataset.id;
-            const precioExtra = parseFloat(chk.dataset.precio); // Obtenemos el precio del data-
+            const precioExtra = parseFloat(chk.dataset.precio); 
             if (chk.checked) {
                 if (!carritoVariantes.some(v => v.id === idVariante)) {
                     carritoVariantes.push({ id: idVariante, precio: precioExtra });
@@ -119,8 +122,8 @@ function formularioPreparar() {
                 carritoVariantes = carritoVariantes.filter(p => p.id !== idVariante);
             }
 
-            calcularTotal(precioBase,totalDisplay); // Actualizar visualmente el precio
-            actualizarServidor(); // Sincronizar con PHP
+            calcularTotal(precioBase,totalDisplay); 
+            actualizarServidor();
         });
     });
 }

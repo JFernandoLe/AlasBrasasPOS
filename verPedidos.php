@@ -9,7 +9,7 @@ incluirTemplate('headerSession', $incio);
 ?>
 
 <div class="panel-ajustes">
-    <div class="ajuste-grupo">
+    <div class="ajuste-grupo dir">
         <label>Navegar:</label>
         <div class="controles-nav-sup">
             <button onclick="navegar(-1)">⬅</button>
@@ -18,23 +18,26 @@ incluirTemplate('headerSession', $incio);
         </div>
     </div>
 
-    <div class="ajuste-grupo">
+    <div class="ajuste-grupo play">
         <label>Carrusel:</label>
         <button id="btnAutoplay" class="btn-toggle activo" onclick="toggleAutoplay()">
             <span id="iconPlay">⏸ Pausar</span>
         </button>
     </div>
 
-    <div class="ajuste-grupo">
+    <div class="ajuste-grupo pages">
         <label>Ver:</label>
         <select id="cardsPorPagina">
-            <option value="1">1 Tarjeta</option>
-            <option value="2" selected>2 Tarjetas</option>
+            <option value="1" selected>1 Tarjeta</option>
+            <option value="2">2 Tarjetas</option>
             <option value="3">3 Tarjetas</option>
+            <option value="4">4 Tarjetas</option>
+            <option value="5">5 Tarjetas</option>
+            <option value="6">6 Tarjetas</option>
         </select>
     </div>
 
-    <div class="ajuste-grupo">
+    <div class="ajuste-grupo zoom">
         <label>Zoom:</label>
         <div class="zoom-controls">
             <button onclick="ajustarZoom(-0.1)">A-</button>
@@ -68,7 +71,7 @@ let index = 0;
 let intervalo;
 let totalPedidosActual = 0;
 let zoomLevel = 1.0;
-let visibles = 2; // Cantidad de tarjetas por pantalla (default)
+let visibles = 1; // Cantidad de tarjetas por pantalla (default)
 let autoplayActivo = true;
 
 /* ==========================================================================
@@ -82,10 +85,8 @@ let autoplayActivo = true;
 function aplicarAnchoTarjetas() {
     const cards = document.querySelectorAll('.pedido-card');
     if (cards.length === 0) return;
-
-    // gap de 2rem (coincide con el SCSS)
-    const anchoCalculado = `calc(${100 / visibles}% - ${(2 * (visibles - 1)) / visibles}rem)`;
-    
+    // gap de 1rem
+    let anchoCalculado = `calc(${100 / visibles}% - 1rem)`;
     cards.forEach(card => {
         card.style.flex = `0 0 ${anchoCalculado}`;
         card.style.width = anchoCalculado;

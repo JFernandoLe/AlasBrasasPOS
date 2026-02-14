@@ -83,7 +83,7 @@
                                     <tr>
                                         <td><?php echo $nombre_variante; ?></td>
                                         <td><img src="<?= htmlspecialchars($rutaImagen)?>" alt="Null" class="imagen-small"></td>
-                                        <td><input type="checkbox" class="chk-opcion" data-target="precio_<?= $id_variante ?>" name="relacion[<?= $id_variante ?>]" <?= $existe?'checked':'' ?>></td>
+                                        <td><input type="checkbox" id="input-variantes" class="chk-opcion" data-target="precio_<?= $id_variante ?>" name="relacion[<?= $id_variante ?>]" <?= $existe?'checked':'' ?>></td>
                                         <td><input value="<?=$precio ?>" type="number" class="input-opcion" placeholder="0.00" min="0" id="precio_<?= $id_variante ?>" name="precio_extra[<?= $id_variante ?>]" required <?= $existe?'':'disabled' ?>></td>
                                     </tr>
                                 <?php endwhile; ?>
